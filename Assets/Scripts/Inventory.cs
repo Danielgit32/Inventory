@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public GameObject _prefab;
+    public GameObject[] _prefab;
     public GameObject _panel;
 
     private int _inventorySlotsLength = 10;
@@ -16,7 +16,7 @@ public class Inventory : MonoBehaviour
     {
         for(int i = 0; i < numberSlots; i++) 
         {   
-            Instantiate(_prefab, _panel.transform);
+            Instantiate(_prefab[i], _panel.transform);
         }
-    }   
+    }
 }
