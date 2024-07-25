@@ -5,7 +5,7 @@ public class Inventory : MonoBehaviour
     public GameObject[] _prefab;
     public GameObject _panel;
 
-    private GameObject[] _inventorySlotsLength = new GameObject[20];
+    private GameObject[] _inventorySlotsLength = new GameObject[10];
 
     private void Start() 
     {

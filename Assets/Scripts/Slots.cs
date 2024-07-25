@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Slots : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
+public class Slots : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler, IDropHandler
 {
     public static Graphic button;
     public static Color basicColor = Color.black;
@@ -21,5 +21,13 @@ public class Slots : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
     public void OnPointerExit(PointerEventData button) 
     {
         GetComponent<Graphic>().color = basicColor;
+    }
+
+    public void OnDrop(PointerEventData eventData) 
+    {
+        var _otherItemTransforms = eventData.pointerDrag.transform;
+        _otherItemTransforms.SetParent(transform);
+        _otherItemTransforms.localPosition = Vector3.zero;
+        
     }
 }
